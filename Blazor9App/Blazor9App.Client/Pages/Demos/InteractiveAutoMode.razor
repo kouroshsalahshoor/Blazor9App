@@ -50,8 +50,10 @@ else
 
     private async Task LoadAuthenticationStateAsync()
     {
-
         var user = (await authenticationStateTask).User;
+        // var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        // var user = authState.User;
+     
         if (user.Identity is not null && user.Identity.IsAuthenticated)
         {
             authMessage = $"{user.Identity.Name} is authenticated.";

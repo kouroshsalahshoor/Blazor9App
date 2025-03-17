@@ -7,6 +7,7 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddAuthorizationCore();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddAuthenticationStateDeserialization();
+builder.Services.AddOptions(); //!!!
 
 // register api service for calls originating from WASM
 builder.Services.AddScoped<IApiService, ClientApiService>();
